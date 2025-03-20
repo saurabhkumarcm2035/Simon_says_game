@@ -1,6 +1,6 @@
 
 let start=document.getElementById('restart');
-
+let tutorial=document.getElementById("tutorial");
 let glowedbtns=[];
 let currentstep=0;
 let scoreDisplay=document.getElementById('score');
@@ -8,6 +8,7 @@ let score=0;
 
 
 start.addEventListener('click',function(){
+    tutorial.style.visibility="hidden";
     this.style.visibility="hidden";
     scoreDisplay.innerText="score:0"
     score=0;
@@ -80,6 +81,7 @@ btns.forEach(btn => {
             console.log("Game Over");
             scoreDisplay.innerText="Your score was :" + score;
             start.style.visibility = "visible";
+            tutorial.style.visibility="visible";
             glowedbtns = []; 
             currentstep = 0;
             score=0;
@@ -102,7 +104,7 @@ btns.forEach(btn => {
 
 
 
-let tutorial=document.getElementById("tutorial");
+
 tutorial.addEventListener('click', function(){
     tutorial.innerText="Click Start Game, and a button will glow. Watch as new colors are added each round. Click the buttons in the exact order they glowed. Each correct round increases your score. A wrong click ends the game. Try to beat your best score!"
 })
